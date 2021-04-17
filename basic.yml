@@ -4,20 +4,22 @@
   connection: local
   gather_facts: no
   tasks:
+    - name: configure provider
+      set_fact:
+      provider:
+        username: cisco
+        password: cisco
+
     - name: configure top level configuration
       ios_config:
         lines: hostname {{ inventory_hostname }}
         timeout: 30
-        provider: 
-          username: cisco
-          password: cisco
+        provider: {{ provider }}
 
     - name: interface IP address
       ios_config:
         timeout: 30
-        provider: 
-          username: cisco
-          password: cisco
+        provider: {{ provider }}
         lines:
           - ip address 192.168.1.10 255.255.255.0
           - no shutdown
