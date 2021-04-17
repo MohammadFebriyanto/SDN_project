@@ -4,14 +4,11 @@
   connection: local
   gather_facts: no
   tasks:
-    - name: configure provider
-      set_fact:
-        provider:
-          username: cisco
-          password: cisco
     - name: interface IP address
       ios_config:
-        provider: "{{provider}}"
+        provider: 
+          username: cisco
+          password: cisco
         lines:
           - ip address 192.168.1.10 255.255.255.0
           - no shutdown
