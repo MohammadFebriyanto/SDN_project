@@ -5,30 +5,30 @@
       username: cisco
       password: cisco
       timeout: 30
-     config:
-      processes:
-      - process_id: 1
-        max_metric:
-          router_lsa: true
-          on_startup:
-            time: 110
-        areas:
-        - area_id: '0'
-          capability: true
-          authentication:
-            enable: no
-        network:
-          address: 23.23.23.0
-          wildcard_bits: 0.0.0.255
-          area: 0
-        network:
-          address: 12.12.12.0
-          wildcard_bits: 0.0.0.255
-          area: 0
-        network:
-          address: 192.168.122.0
-          wildcard_bits: 0.0.0.255
-          area: 0
-        default_information:
-          originate: true
-     state: merged
+      config:
+        processes:
+        - process_id: 1
+          max_metric:
+            router_lsa: true
+            on_startup:
+              time: 110
+          areas:
+          - area_id: '0'
+            capability: true
+            authentication:
+              enable: no
+          network:
+            address: 23.23.23.0
+            wildcard_bits: 0.0.0.255
+            area: 0
+          network:
+            address: 12.12.12.0
+            wildcard_bits: 0.0.0.255
+            area: 0
+          network:
+            address: 192.168.122.0
+            wildcard_bits: 0.0.0.255
+            area: 0
+          default_information:
+            originate: true
+      state: merged
