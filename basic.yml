@@ -8,6 +8,9 @@
       ios_config:
         lines: hostname {{ inventory_hostname }}
         timeout: 30
+        provider: 
+          username: cisco
+          password: cisco
 
     - name: interface IP address
       ios_config:
