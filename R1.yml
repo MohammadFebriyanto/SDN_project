@@ -1,0 +1,27 @@
+---
+- name: config
+  hosts: R1
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: configure provider
+      set_fact:
+        provider:
+          username: cisco
+          password: cisco
+
+    - name: configure top level configuration
+      ios_config:
+        lines: hostname {{ inventory_hostname }}
+        timeout: 30
+        provider: "{{provider}}"
+
+    - name: interface IP address
+      ios_config:
+        timeout: 30
+        provider: "{{provider}}"
+        lines:
+          - ip address 10.0.0.1 255.255.255.0
+          - no shutdown
+          - full-duplex
+        parents: interface FastEthernet 0/1
