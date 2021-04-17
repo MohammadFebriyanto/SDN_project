@@ -1,7 +1,6 @@
 ---
 - name: Merge provided OSPF V2 configuration
   cisco.ios.ios_ospfv2:
-    timeout: 30
     config:
       processes:
       - process_id: 1
