@@ -1,3 +1,4 @@
+---
 - name: Show router version
     ios_command:
       commands: show version
