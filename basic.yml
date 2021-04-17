@@ -22,4 +22,4 @@
           - ip address 192.168.1.10 255.255.255.0
           - no shutdown
           - full-duplex
-        parents: interface FastEthernet 1/0
+        parents: interface FastEthernet 0/1
