@@ -1,0 +1,10 @@
+- hosts: routers
+  connection: local
+  tasks:
+  - name: Show router version
+    ios_command:
+      commands: show version
+      timeout: 30
+      provider:
+        username: cisco
+        password: cisco
