@@ -5,7 +5,7 @@
       username: cisco
       password: cisco
       timeout: 30
-    config:
+     config:
       processes:
       - process_id: 1
         max_metric:
@@ -31,4 +31,4 @@
           area: 0
         default_information:
           originate: true
-    state: merged
+     state: merged
