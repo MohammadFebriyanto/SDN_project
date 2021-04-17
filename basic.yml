@@ -1,6 +1,6 @@
 ---
 - name: config
-  hosts: routers
+  hosts: R1
   connection: local
   gather_facts: no
   tasks:
