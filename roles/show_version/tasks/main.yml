@@ -1,8 +1,8 @@
 ---
 - name: Show router version
-    ios_command:
-      commands: show version
-      timeout: 30
-      provider:
-        username: cisco
-        password: cisco
+  ios_command:
+    commands: show version
+    timeout: 30
+    provider:
+      username: cisco
+      password: cisco
