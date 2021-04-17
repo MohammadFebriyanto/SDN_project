@@ -1,9 +1,6 @@
 ---
 - name: Merge provided OSPF V2 configuration
   cisco.ios.ios_ospfv2:
-    provider:
-      username: cisco
-      password: cisco
     config:
       processes:
       - process_id: 1
