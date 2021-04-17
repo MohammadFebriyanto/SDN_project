@@ -1,7 +1,6 @@
 ---
 - name: Merge provided OSPF V2 configuration
   cisco.ios.ios_ospfv2:
-    timeout: 30
     provider:
       username: cisco
       password: cisco
