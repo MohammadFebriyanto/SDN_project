@@ -1,0 +1,6 @@
+---
+- name: configure provider
+  set_fact:
+    provider:
+      username: cisco
+      password: cisco

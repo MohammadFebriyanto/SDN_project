@@ -7,11 +7,13 @@
 
     - name: configure top level configuration
       ios_config:
+        provider: "{{provider}}"
         lines: hostname {{ inventory_hostname }}
         timeout: 30
 
     - name: interface IP address
       ios_config:
+        provider: "{{provider}}"
         timeout: 30
         lines:
           - ip address 3.3.3.3 255.255.255.0
@@ -21,6 +23,7 @@
 
     - name: interface IP address
       ios_config:
+        provider: "{{provider}}"
         timeout: 30
         lines:
           - ip address 23.23.23.3 255.255.255.0
@@ -29,4 +32,5 @@
         parents: interface FastEthernet 2/0
 
   roles:
+  - role: creds
   - role: r3_ospf

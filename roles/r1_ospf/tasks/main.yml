@@ -1,6 +1,7 @@
 ---
 - name: Set OSPF configuration
   ios_config:
+    provider: "{{provider}}"
     timeout: 30
     lines:
       - router-id 1.1.1.1
