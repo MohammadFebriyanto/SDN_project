@@ -1,30 +1,11 @@
 ---
-- name: Merge provided OSPF V2 configuration
-  cisco.ios.ios_ospfv2:
-    config:
-      processes:
-      - process_id: 1
-        max_metric:
-          router_lsa: true
-          on_startup:
-            time: 110
-        areas:
-        - area_id: '0'
-          capability: true
-          authentication:
-            enable: no
-        network:
-          address: 23.23.23.0
-          wildcard_bits: 0.0.0.255
-          area: 0
-        network:
-          address: 12.12.12.0
-          wildcard_bits: 0.0.0.255
-          area: 0
-        network:
-          address: 192.168.122.0
-          wildcard_bits: 0.0.0.255
-          area: 0
-        default_information:
-          originate: true
-    state: merged
+- name: Set OSPF configuration
+  ios_config:
+    timeout: 30
+    provider: "{{provider}}"
+    lines:
+      - router-id 2.2.2.2
+      - netw 23.23.23.0 0.0.0.255 area 0
+      - netw 12.12.12.0 0.0.0.255 area 0
+      - netw 192.168.122.0 0.0.0.255 area 0
+    parents: router ospf 1
