@@ -2,7 +2,6 @@
 - name: Set OSPF configuration
   ios_config:
     timeout: 30
-    provider: "{{provider}}"
     lines:
       - router-id 1.1.1.1
       - netw 1.1.1.0 0.0.0.255 area 0
